@@ -5,6 +5,7 @@ public class Student {
   private final String name;
   private final int age;
   private final String address;
+
   private boolean activated;
 
   public Student(String name, int age, String address) {
@@ -32,4 +33,30 @@ public class Student {
   public boolean isActivate() {
     return activated;
   }
+
+// //  좋지 않은 예시 setXXX 은 Dto 에서 사용하는 것이 좋음.
+//  public void setActivated(boolean activated) {
+//    if (activated && this.activated){
+//      throw  new IllegalArgumentException();
+//    }
+//    if (!activated && !this.activated){
+//      throw  new IllegalArgumentException();
+//    }
+//    this.activated = activated;
+//  }
+
+  public void activate(){
+    if (this.activated){
+      throw new IllegalArgumentException();
+    }
+    this.activated = true;
+  }
+  public void deactivate(){
+    if (!this.activated){
+      throw new IllegalArgumentException();
+    }
+    this.activated = false;
+  }
+
 }
+

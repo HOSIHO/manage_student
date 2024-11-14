@@ -1,6 +1,7 @@
 package org.fastcampus.student_management.application.course.dto;
 
 import org.fastcampus.student_management.domain.Course;
+import org.fastcampus.student_management.domain.CourseFee;
 import org.fastcampus.student_management.domain.DayOfWeek;
 
 public class CourseInfoDto {
@@ -26,6 +27,7 @@ public class CourseInfoDto {
     this.courseTime = course.getCourseTime();
   }
 
+
   public String getCourseName() {
     return courseName;
   }
@@ -44,5 +46,9 @@ public class CourseInfoDto {
 
   public Long getCourseTime() {
     return courseTime;
+  }
+
+  public void changeFee(int fee){
+    this.changeFee(fee);
   }
 }
